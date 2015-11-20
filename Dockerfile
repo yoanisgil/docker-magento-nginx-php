@@ -24,6 +24,4 @@ COPY ./php-fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 COPY ./php-fpm/www-pool.conf /etc/php5/fpm/pool.d/www.conf
 COPY ./supervisord.conf /etc/supervisord.conf
 
-VOLUME ["/srv/magento"]
-
-CMD ["/usr/bin/supervisord", "-n"]
+CMD ["/usr/bin/supervisord", "-n" , "-c", "/etc/supervisord.conf"]
